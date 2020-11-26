@@ -11,6 +11,12 @@ import org.springframework.stereotype.Component;
  * 参考：https://www.cnblogs.com/jing-daye/p/5911138.html、https://www.cnblogs.com/shamo89/p/9911473.html
  */
 public class FactoryBeanTests {
+    public static void main(String[] args) {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+        System.out.println("调用 getBean(\"myFactoryBean\") 的结果：" + ac.getBean("myFactoryBean"));
+        System.out.println("调用 getBean(\"&myFactoryBean\") 的结果：" + ac.getBean("&myFactoryBean"));
+    }
+
     @Test
     public void testFactoryBeanWithAnnotation() {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);

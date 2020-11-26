@@ -3,11 +3,14 @@ plugins {
 }
 
 group 'org.springframework'
-version '5.1.0.RELEASE'
+version '5.2.10.RELEASE'
 
 sourceCompatibility = 1.8
 
 repositories {
+    //添加阿里云镜像
+    maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
+    maven { url "https://maven.aliyun.com/nexus/content/repositories/jcenter" }
     mavenCentral()
 }
 
